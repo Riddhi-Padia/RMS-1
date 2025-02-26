@@ -1,0 +1,14 @@
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\bin\Debug\net7.0\PS.Domain.deps.json
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\bin\Debug\net7.0\PS.Domain.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\bin\Debug\net7.0\PS.Domain.pdb
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.AssemblyInfoInputs.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.AssemblyInfo.cs
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.csproj.CoreCompileInputs.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\refint\PS.Domain.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.pdb
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\ref\PS.Domain.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\bin\Debug\net7.0\PS.Domain.runtimeconfig.json
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.csproj.AssemblyReference.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Domain\obj\Debug\net7.0\PS.Domain.genruntimeconfig.cache

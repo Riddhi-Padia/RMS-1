@@ -1,0 +1,43 @@
+﻿@model PS.Domain.View_Models.Login;
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex fit-content justify-content-center align-items-center">
+    <img class="logo" src="@Url.Content("~/images/logos/pizzashop_logo.png")" alt="">
+    <h1 style="color: #0d6efd;">PIZZA SHOP</h1>
+</div>
+
+<div class="mt-3 mb-3 fs-3 fw-bold fontstyle">Welcome,</div>
+
+<!-- form -->
+<form asp-action="login" asp-controller="Pages" method="post">
+    <div class="input-group mt-3">
+        <input type="email" class="form-control" placeholder="Email*" asp-for=Email aria-describedby="basic-addon1">
+        <span class="input-group-text" id="basic-addon1">
+            <img class="icon" src="images/Default_pfp.svg.png" alt="no image">
+        </span>
+    </div>
+    <span asp-validation-for=Email class="text-danger"></span>
+    <div class="input-group mt-3">
+        <input type="password" class="form-control" id="login-pass" placeholder="Password*" asp-for="Password"
+            aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">
+            <img type="button" class="icon" id="login-eye-hide" src="@Url.Content("~/images/my/pass-hidden.png")"
+                alt="no image">
+            <img type="button" class="icon d-none" id="login-eye-show" src="@Url.Content("~/images/my/pass-show.png")"
+                alt="">
+        </span>
+    </div>
+    <span asp-validation-for="Password" class="text-danger"></span>
+    <div class="mt-3 d-flex justify-content-between">
+        <div>
+            <input type="checkbox" id="rememberme" value="Remember Me">
+            <label for="rememberme">Remember Me</label>
+        </div>
+        <a href="@Url.Action("forgotPassword", "Home")"
+            class="fs-6 text-decoration-none d-flex align-items-center">Forgot Password?</a>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3 fs-6" style="width: 100%;">Login</button>
+    <span asp-validation-summary="ModelOnly" class="text-danger"></span>
+</form>

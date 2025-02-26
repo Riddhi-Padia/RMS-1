@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pizza_Shop_MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PS.Web/Views/Shared/_Layout.cshtml.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Pizza_Shop_MVC.styles.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</head>
+<body class = "fontstyle" style="background-color: #f2f2f2;">
+    <!-- offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="asidebarContent" aria-labelledby="asidebarContent" >
+        <div class="offcanvas-header">
+            <img class = "logo1" src = "@Url.Content("~/images/logos/pizzashop_logo.png")" alt = "">
+            <h1 class = "navbar-brand fw-bold" style="color: var(--blue1)">PIZZA SHOP</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <ul class="nav flex-column gap-3">
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/border-all.svg")" alt = "">
+                    <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="adminDashboard" >Dashboard</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/people-fill.svg")" alt = "">
+                    <a class="nav-link " asp-area="" asp-controller="Users" asp-action="userList">Users</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/person-fill-gear.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="roles">Role and Permission</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/menu.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Menus" asp-action="menuPage">Menu</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/square-fill.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Tables" asp-action="sec_Tab">Table and Section</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/cash-coin.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Taxes" asp-action="tax_Fees">Tax and Fees</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/clipboard-check.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="orders">Orders</a>
+                </li>
+                <li class="nav-item d-flex justify-content-start align-items-center">
+                    <img class = "icon" src = "@Url.Content("~/images/my/person-rolodex.svg")" alt = "">
+                    <a class="nav-link" asp-area="" asp-controller="Customers" asp-action="customer">Customers</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class = "d-flex" style="height: 100vh;">
+    <!-- Sidebar -->
+    <div class = "sidebar col-auto p-1 flex-wrap align-items-center justify-content-center " style="height: 100vh; background-color: white;">
+        <div class = "d-flex align-items-center">
+            <img class = "logo1" src = "@Url.Content("~/images/logos/pizzashop_logo.png")" alt = "">
+                <h1 class = "navbar-brand fw-bold" style="color: var(--blue1)">PIZZA SHOP</h1>
+        </div>
+        <ul class="nav flex-column gap-3 mt-3 ms-3">
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/border-all.svg")" alt = "">
+                <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Pages" asp-action="adminDashboard" >Dashboard</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/people-fill.svg")" alt = "">
+                <a class="nav-link " asp-area="" asp-controller="Users" asp-action="userList">Users</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/person-fill-gear.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="roles">Role and Permission</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/menu.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Menus" asp-action="menuPage">Menu</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/square-fill.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Tables" asp-action="sec_Tab">Table and Section</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/cash-coin.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Taxes" asp-action="tax_Fees">Tax and Fees</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/clipboard-check.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="orders">Orders</a>
+            </li>
+            <li class="nav-item d-flex justify-content-start align-items-center">
+                <img class = "icon" src = "@Url.Content("~/images/my/person-rolodex.svg")" alt = "">
+                <a class="nav-link" asp-area="" asp-controller="Customers" asp-action="customer">Customers</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Logout Modal -->
+    <div class="modal fade" id="LogoutModel" tabindex="-1" aria-labelledby="LogoutModelLabel" aria-hidden="true"
+        style="top:30%">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="mt-3 modal-body border-0 p-0">
+                    <div class="d-flex justify-content-center">
+                        <img style="width: 40px; height: 40px;" src="@Url.Content("~/images/toppng.com-warning-icon-2400x2400.png")" alt="">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <p>Are you sure you want to Logout?</p>
+                    </div>
+                </div>
+                <div class="modal-footer mt-0 border-0 d-flex justify-content-center p-0 mb-3">
+                    <button type="button" class="btn btn-filled">Yes</button>
+                    <button type="button" class="btn btn-border" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between align-items-center">
+            <div class = "d-flex align-items-center">
+                <!-- toggle button for offcanvas -->
+                <img class = "navbar-brand icon1 d-lg-none" type = "button" data-bs-toggle="offcanvas" data-bs-target="#asidebarContent" aria-controls="asidebarContent" src = "@Url.Content("~/images/menu-bar.svg")" alt = "">
+                <!-- logo and text for small screen -->
+                <img class = "logo1 d-lg-none" src = "@Url.Content("~/images/logos/pizzashop_logo.png")" alt = "">
+                <h1 class = "navbar-brand fw-bold d-lg-none" style="color: white">PIZZA SHOP</h1>
+            </div>
+            <!-- profile icon dropdown -->
+            <div>
+                <a  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class = "icon1 justify-content-end me-3" src = "@Url.Content("~/images/Default_pfp.svg.png")" alt = "">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right:10px; left:auto">
+                    <li class="m-1 ">
+                        <div class="dropdown-item d-flex align-items-center">
+                            <img class = "icon1 justify-content-end me-3" src = "@Url.Content("~/images/Default_pfp.svg.png")" alt = "" style="width:40px;height:40px;"> 
+                            <span class=" fs-5">Admin@123</span>
+                        </div>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li class="m-2 ">
+                        <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Users" asp-action="userProfile" >
+                            <img class = "icon1 justify-content-end me-3" src = "@Url.Content("~/images/Default_pfp.svg.png")" alt = ""> 
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li class="m-2 d-flex align-items-center">
+                        <a class="dropdown-item" asp-area="" asp-controller="Pages" asp-action="changePassword" >
+                            <img class = "icon1 justify-content-end me-3" src = "@Url.Content("~/images/my/arrow-clockwise.svg")" alt = ""> 
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="m-2 d-flex align-items-center">
+                        <a class="dropdown-item" data-bs-toggle="modal"
+                                data-bs-target="#LogoutModel">
+                            <img class = "icon1 justify-content-end me-3" src = "@Url.Content("~/images/my/box-arrow-right.svg")" alt = ""> 
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Render component-->
+        <main role="main" class="p-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    </div>
+</body>
+</html>

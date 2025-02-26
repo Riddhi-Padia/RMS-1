@@ -1,0 +1,72 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-container m-3 p-3 row row-cols-xl-4 row-cols-md-2 row-cols-1">
+    <div class="dashboard-card col">
+        <div class="icon-container icon-sales"><img src="@Url.Content("~/images/icons/total-sales.svg")"></div>
+        <h3 class="card-value">$1630</h3>
+        <p class="card-title">Total Sales</p>
+    </div>
+    <div class="dashboard-card col">
+        <div class="icon-container icon-orders"><img src="@Url.Content("~/images/icons/total-orders.svg")">
+        </div>
+        <h3 class="card-value">4</h3>
+        <p class="card-title">Total Orders</p>
+    </div>
+    <div class="dashboard-card col">
+        <div class="icon-container icon-value"><img src="@Url.Content("~/images/icons/order-value.svg")"></div>
+        <h3 class="card-value">630</h3>
+        <p class="card-title">Avg. Order Value</p>
+    </div>
+    <div class="dashboard-card col">
+        <div class="icon-container icon-waiting"><img src="@Url.Content("~/images/icons/waiting-time.svg")">
+        </div>
+        <h3 class="card-value">6.96 mins</h3>
+        <p class="card-title">Avg. Waiting Time</p>
+    </div>
+</div>
+
+<style>
+    .icon-sales {
+        background-color: rgba(42, 253, 91, 0.637);
+        outline-color: rgba(42, 253, 91, 0.637);
+    }
+
+    .icon-orders {
+        background-color: rgba(107, 108, 209, 0.61);
+        outline-color: rgba(107, 108, 209, 0.61);
+    }
+
+    .icon-value {
+        background-color: rgba(0, 123, 255, 0.2);
+        outline-color: rgba(0, 123, 255, 0.2);
+    }
+
+    .icon-waiting {
+        background-color: rgba(236, 27, 48, 0.384);
+        outline-color: rgba(236, 27, 48, 0.384);
+    }
+
+    .icon-container {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 2px;
+        box-shadow: 0 0 0 5px rgb(255, 255, 255);
+        outline: 1px solid rgba(0, 0, 0, 0.4);
+        outline-offset: 5px;
+    }
+
+    .icon-container img {
+        width: 50%;
+        height: auto;
+    }
+</style>

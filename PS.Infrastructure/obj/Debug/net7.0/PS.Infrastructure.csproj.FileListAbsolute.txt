@@ -1,0 +1,15 @@
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\bin\Debug\net7.0\PS.Infrastructure.deps.json
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\bin\Debug\net7.0\PS.Infrastructure.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\bin\Debug\net7.0\PS.Infrastructure.pdb
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\bin\Debug\net7.0\PS.Domain.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\bin\Debug\net7.0\PS.Domain.pdb
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.csproj.AssemblyReference.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.AssemblyInfoInputs.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.AssemblyInfo.cs
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.csproj.CopyComplete
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\refint\PS.Infrastructure.dll
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\PS.Infrastructure.pdb
+D:\Project\Pizza Shop\Pizza_Shop_3-tier\PS.Infrastructure\obj\Debug\net7.0\ref\PS.Infrastructure.dll
