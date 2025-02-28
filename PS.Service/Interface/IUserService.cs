@@ -6,11 +6,9 @@ public interface IUserService
 {
     public Task<IEnumerable<UserDetails>> getUserDetail();
 
-    // public Role getUserRole();
+    public Task<bool> AddUser(UserProfile u);
 
-    // public Country getUserCountry();
+    public Task<bool> EditUser(string email, UserProfile u);
 
-    // public State getUserState();
-
-    // public City getUserCity();
+    public Task<UserProfile> GetUserProfilebyEmail(string email);
 }

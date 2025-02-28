@@ -13,7 +13,7 @@
                 aria-label="Search" onkeyup="SearchTable()">
             <img class="icon" src="@Url.Content("~/images/search-icon.svg")" alt="">
         </form>
-        <a class="btn btn-filled" asp-area="" asp-controller="Users" asp-action="addUser">+ Add User</a>
+        <a class="btn btn-filled" asp-area="" asp-controller="Users" asp-action="AddUser">+ Add User</a>
     </div>
 </div>
 <div class="m-4">
@@ -80,7 +80,7 @@
                             <td><span class="btn btn-inactive rounded-pill pt-0 pb-0 disabled">Inactive</span></td>
                         }
                         <td>
-                            <a class="btn border-0" asp-area="" asp-controller="Users" asp-action="editUser">
+                            <a class="btn border-0" asp-area="" asp-controller="Users" asp-action="EditUser(@obj.Email)">
                                 <img src="@Url.Content("~/images/my/pen.svg")" alt="">
                             </a>
                             <button type="button" class="inputfields btn border-0" data-bs-toggle="modal"

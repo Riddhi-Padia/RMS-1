@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using PS.Domain.Data_Models;
 using PS.Domain.View_Models;
 using PS.Service.Interface;
@@ -14,8 +15,9 @@ public class UsersController : Controller
     private readonly ILogger<UsersController> _logger;
     private readonly PizzaShopDbContext _context;
 
-    private readonly IUserService _service ;
+    private readonly IUserService _service;
 
+    //constructor
     public UsersController(ILogger<UsersController> logger, PizzaShopDbContext context, IUserService service)
     {
         _logger = logger;
@@ -23,39 +25,64 @@ public class UsersController : Controller
         _service = service;
     }
 
-    public async IActionResult userList()
+    [HttpGet]
+    public async Task<IActionResult> UserList()
     {
         IEnumerable<UserDetails> userlist = await _service.getUserDetail();
         return View(userlist);
+        //return View( new _service.UserPagination() { userlist, Page = new() });
     }
 
-    // get
-    public IActionResult addUser()
+    [HttpGet]
+    // GET - Add user
+    public IActionResult AddUser()
     {
         return View();
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult addUser(User u)
+    // POST - add user
+    public async Task<IActionResult> AddUser(UserProfile u)
     {
-        _context.Users.Add(u);//does not push the data into database
-        _context.SaveChanges();//this command pushes the changes to the database
-        return RedirectToAction("userList");
+        if (!ModelState.IsValid)
+            return BadRequest("Invalid user data.");
+
+        bool isAdded = await _service.AddUser(u);
+        if (!isAdded)
+            return Conflict("User with this email already exists.");
+
+        return RedirectToAction("UserList");
     }
 
-    public IActionResult userProfile()
+    public IActionResult UserProfile()
     {
-        var u= from e in _context.Users
-        orderby e.Id
-        select e;
-        Console.WriteLine("inside userprofile");
-        Console.WriteLine(u);
+        var u = from e in _context.Users
+                orderby e.Id
+                select e;
         return View(u);
     }
 
-    public IActionResult editUser()
+    [HttpGet]
+    public async Task<IActionResult> EditUser(string email)
     {
-        return View();
+        var user = await _service.GetUserProfilebyEmail(email);
+        if (user == null)
+            return NotFound("User not found.");
+
+        return View(user);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> EditUser(string email, UserProfile model)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest("Invalid user data.");
+
+        bool isUpdated = await _service.EditUser(email, model);
+        if (!isUpdated)
+            return NotFound("User not found.");
+
+        return Ok("User updated successfully!");
     }
 }

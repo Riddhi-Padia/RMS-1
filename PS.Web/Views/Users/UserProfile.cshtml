@@ -1,0 +1,96 @@
+@model PS.Domain.View_Models.UserProfile;
+@{
+    Layout = "_Layout";
+    <!--var obj in Modal;-->
+}
+
+<div class="row p-3 d-flex justify-content-between">
+    <h2 class="m-0 fontstyle" style="color: var(--blue1);">My Profile</h2>
+</div>
+<div class="m-4">
+    <div class="divcontent shadow">
+        <div style="position: relative;">
+            <img class="p-0 userProfileBg" src="@Url.Content("~/images/profile_div_bg.jpg")" alt="" style="position: absolute;">
+            <div class="ms-3 row d-flex mb-3 pt-4" style="position: relative;">
+                <div class="col-auto" style="position: relative;">
+                    <img class="bigprofileicon  p-0" src="@Url.Content("~/images/Default_pfp.svg.png")">
+                    <img class="cameraicon p-0" src="@Url.Content("~/images/Default_pfp.svg.png")">
+                </div>
+                <div class="col d-flex align-items-center justify-content-between pt-4 me-3 flex-wrap">
+                    <div class="row d-flex justify-content-between">
+                        <span class="fw-bold fs-4 ">Admin Admin</span>
+                        <span>Admin</span>
+                    </div>
+                    <span>admin@yopmail.com</span>
+                </div>
+            </div>
+        </div>
+        <!-- details -->
+        <div class="p-3">
+            <div class="row d-flex mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="firstname" placeholder="FirstName">
+                    <label for="firstname" class="ps-4">First Name</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="lastname" placeholder="LastName">
+                    <label for="lastname" class="ps-4">Last Name</label>
+                </div>
+            </div>
+            <div class="row d-flex mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="username" placeholder="UserName">
+                    <label for="username" class="ps-4">User Name</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="phone" placeholder="Phone">
+                    <label for="phone" class="ps-4">Phone</label>
+                </div>
+            </div>
+            <div class="row d-flex mb-3">
+                <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                    <select class="inputfields form-select" type="text" id="country" placeholder="Country">
+                        <option>Select Country</option>
+                        <option>Country 1</option>
+                        <option>Country 2</option>
+                        <option>Country 3</option>
+                    </select>
+                    <label for="country" class="ps-4">Country</label>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                    <select class="inputfields form-select" type="text" id="state" placeholder="State">
+                        <option>Select State</option>
+                        <option>State 1</option>
+                        <option>State 2</option>
+                        <option>State 3</option>
+                    </select>
+                    <label for="state" class="ps-4">State</label>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                    <select class="inputfields form-select" type="text" id="city" placeholder="City">
+                        <option>Select City</option>
+                        <option>City 1</option>
+                        <option>City 2</option>
+                        <option>City 3</option>
+                    </select>
+                    <label for="city" class="ps-4">City</label>
+                </div>
+            </div>
+            <div class="row d-flex mb-3">
+                <div class="col-sm-12 col-md-8 col-lg-8 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="address" placeholder="Address">
+                    <label for="address" class="ps-4">Address</label>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                    <input class="inputfields form-control" type="text" id="zipcode" placeholder="Zipcode">
+                    <label for="zipcode" class="ps-4">Zip Code</label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-filled m-2">Update</button>
+                <button class="btn btn-border m-2">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

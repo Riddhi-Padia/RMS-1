@@ -48,8 +48,8 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
-    [ForeignKey("RoleID")]
-    public virtual required Role Role { get; set; }
+    [ForeignKey("RoleId")]
+    public virtual Role Role { get; set; }
     
     public virtual City? City { get; set; }
 
