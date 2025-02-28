@@ -98,6 +98,7 @@ public class UserService : IUserService
         if (user == null)
             return null;
 
+
         var roletable = await _repository.GetUserRoleAsync(user.RoleId);
 
         return new UserProfile
