@@ -1,0 +1,123 @@
+@model PS.Domain.View_Models.UserProfile;
+@{
+    Layout = "_Layout";
+}
+
+<div class="row p-3 d-flex justify-content-between">
+    <div class="col">
+        <h2 class="m-0 fontstyle" style="color: var(--blue1);">Add User</h2>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <a class="btn btn-border" asp-area="" asp-controller="Users" asp-action="userList">
+            < Back</a>
+    </div>
+</div>
+<div class="m-4">
+    <div class="divcontent shadow">
+        <div class="p-3">
+            <form method="post" asp-action="AddUser">
+                <!-- name -->
+                <div class="row d-flex mb-3">
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Firstname" placeholder="FirstName">
+                        <label asp-for="Firstname" class="ps-4"></label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Lastname" placeholder="LastName">
+                        <label asp-for="Lastname" class="ps-4"></label>
+                    </div>
+                </div>
+                <!-- username and role -->
+                <div class="row d-flex mb-3">
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Username" placeholder="UserName">
+                        <label asp-for="Username" class="ps-4">User Name</label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <select class="inputfields form-select" type="button" asp-for="Role" placeholder="Role">
+                            <option value="0">Select Role</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Chef</option>
+                            <option value="3">Account Manager</option>
+                        </select>
+                        <label asp-for="Role" class="ps-4">Role</label>
+                    </div>
+                </div>
+                <!-- email and password -->
+                <div class="row d-flex mb-3">
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Email" placeholder="Email">
+                        <label asp-for="Email" class="ps-4">Email</label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-floating mb-3">
+                        <input class="inputfields form-control" type="password" asp-for="Password" placeholder="Password">
+                        <label asp-for="Password" class="ps-4">Password</label>
+                    </div>
+                </div>
+                <!-- browse file -->
+                <div class="row d-flex mb-3">
+                    <div class="upload-container">
+                        <label class="upload-box" for="fileInput">
+                            <input type="file" id="fileInput" onchange="changeFileName(event)" hidden />
+                            <div class="upload-content">
+                                <img class="icon" src="@Url.Content("~/images/my/cloud-arrow-up.svg")" alt=""></i>
+                                <p id="fileName">Browse File</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- country, state and city -->
+                <div class="row d-flex mb-3">
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <select class="inputfields form-select" type="text" asp-for="Country" placeholder="Country">
+                            <option value="0">Select Country</option>
+                            <option value="1">Country 1</option>
+                            <option value="2">Country 2</option>
+                            <option value="3">Country 3</option>
+                        </select>
+                        <label asp-for="Country" class="ps-4">Country</label>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <select class="inputfields form-select" type="text" asp-for="State" placeholder="State">
+                            <option value="0">Select State</option>
+                            <option value="1">State 1</option>
+                            <option value="2">State 2</option>
+                            <option value="3">State 3</option>
+                        </select>
+                        <label asp-for="State" class="ps-4">State</label>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <select class="inputfields form-select" type="text" asp-for="City" placeholder="City">
+                            <option value="0">Select City</option>
+                            <option value="1">City 1</option>
+                            <option value="2">City 2</option>
+                            <option value="3">City 3</option>
+                        </select>
+                        <label asp-for="City" class="ps-4">City</label>
+                    </div>
+                </div>
+                <!-- zipcode, address and phone -->
+                <div class="row d-flex mb-3">
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Zipcode" placeholder="Zipcode">
+                        <label asp-for="Zipcode" class="ps-4">Zip Code</label>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Address" placeholder="Address">
+                        <label asp-for="Address" class="ps-4">Address</label>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 form-floating mb-3">
+                        <input class="inputfields form-control" type="text" asp-for="Phone" placeholder="Phone">
+                        <label asp-for="Phone" class="ps-4">Phone</label>
+                    </div>
+                </div>
+                <!-- buttons -->
+                <div class="d-flex justify-content-start">
+                    <button class="btn btn-filled m-2" type="submit">Create User</button>
+                    <a class="btn btn-border m-2" asp-controller="Users" asp-action="userList">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

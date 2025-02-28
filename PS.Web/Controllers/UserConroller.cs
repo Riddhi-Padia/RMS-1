@@ -22,7 +22,6 @@ public class UserController : Controller
             string resetToken = "generated-reset-token";
             string resetLink = Url.Link("default", new { Controller = "Home", Action = "resetPassword", token = resetToken, email });
 //            string resetLink = Url.Action("ResetPassword", "Home", new { token = resetToken, email }, Request.Scheme);
-
             await _emailService.SendResetPasswordEmailAsync(email, resetLink);
 
             return Ok("User created and reset password email sent!");

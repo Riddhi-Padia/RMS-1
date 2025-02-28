@@ -2,10 +2,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PS.Infrastructure\PS.Infrastructure.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.10.0" />
-    <PackageReference Include="MimeKit" Version="4.10.0" />
-  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

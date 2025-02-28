@@ -1,0 +1,113 @@
+@model IEnumerable<PS.Domain.View_Models.UserDetails>;
+@{
+    Layout = "_Layout";
+}
+
+<div class="p-3 d-flex justify-content-between align-items-center">
+    <div>
+        <h2 class="m-0 fontstyle" style="color: var(--blue1);">Users</h2>
+    </div>
+    <div class="d-flex gap-3">
+        <form class="d-flex align-items-center justify-content-between border pe-2" style="background-color: white;">
+            <input class="inputfields form-control border-0" id="myInput" style="outline: none;" type="text" placeholder="Search"
+                aria-label="Search" onkeyup="SearchTable()">
+            <img class="icon" src="@Url.Content("~/images/search-icon.svg")" alt="">
+        </form>
+        <a class="btn btn-filled" asp-area="" asp-controller="Users" asp-action="addUser">+ Add User</a>
+    </div>
+</div>
+<div class="m-4">
+
+    <!-- Delete User Modal -->
+    <div class="modal fade" id="DeleteUserModel" tabindex="-1" aria-labelledby="DeleteUserModelLabel" aria-hidden="true"
+        style="top:30%">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="DeleteUserModellLabel">Delete Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-0 p-0">
+                    <div class="d-flex justify-content-center">
+                        <img style="width: 40px; height: 40px;"
+                            src="@Url.Content("~/images/toppng.com-warning-icon-2400x2400.png")" alt="">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <p>Are you sure you want to delete this user ?</p>
+                    </div>
+                </div>
+                <div class="modal-footer mt-0 border-0 d-flex justify-content-center p-0 mb-3">
+                    <button type="button" class="btn btn-filled">Yes</button>
+                    <button type="button" class="btn btn-border" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divcontent shadow table-responsive">
+        <!-- table content -->
+        <table class="table fw-bold text-muted" id="myTable">
+            <thead class="fs-6">
+                <tr>
+                    <th scope="col-2">Name
+                        <img class="p-0" src="@Url.Content("~/images/my/arrow-down.svg")" alt=" ">
+                        <img class="p-0" src="@Url.Content("~/images/my/arrow-up.svg")" alt=" ">
+                    </th>
+                    <th scope="col-3">Email</th>
+                    <th scope="col-2">Phone</th>
+                    <th scope="col-2">Role
+                        <img class="p-0" src="@Url.Content("~/images/my/arrow-down.svg")" alt=" ">
+                        <img class="p-0" src="@Url.Content("~/images/my/arrow-up.svg")" alt=" ">
+                    </th>
+                    <th scope="col-2">Status</th>
+                    <th scope="col-1">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.Firstname @obj.Lastname</td>
+                        <td>@obj.Email</td>
+                        <td>@obj.Phone</td>
+                        <td>@obj.Role</td>
+                        @if ((bool)@obj.Isactive == true)
+                        {
+                            <td><span class="btn btn-active rounded-pill pt-0 pb-0 disabled">Active</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="btn btn-inactive rounded-pill pt-0 pb-0 disabled">Inactive</span></td>
+                        }
+                        <td>
+                            <a class="btn border-0" asp-area="" asp-controller="Users" asp-action="editUser">
+                                <img src="@Url.Content("~/images/my/pen.svg")" alt="">
+                            </a>
+                            <button type="button" class="inputfields btn border-0" data-bs-toggle="modal"
+                                data-bs-target="#DeleteUserModel">
+                                <img src="@Url.Content("~/images/my/trash.svg")" alt="">
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- pagination -->
+        <div class="m-3 d-flex justify-content-end align-items-center">
+            <span class="me-2">Items per Page: </span>
+            <select class="me-2 text-muted" id="ddvalue" onclick="paging()" style="border: 1px solid gray">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span class="me-2">Showing 1 - 5 of 13</span>
+            <button class="btn text-muted pt-0 pb-0 me-2" id="prevbutton" style="border: 1px solid gray">
+                <
+            </button>
+            <button class="btn text-muted pt-0 pb-0 me-2" id="nextbutton" style="border: 1px solid gray">
+                >
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PS.Domain.Data_Models;
 
@@ -47,6 +48,9 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
+    [ForeignKey("RoleID")]
+    public virtual required Role Role { get; set; }
+    
     public virtual City? City { get; set; }
 
     public virtual Country? Country { get; set; }

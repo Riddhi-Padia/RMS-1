@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using PS.Domain.Data_Models;
 using PS.Web.Models;
 
 namespace PS.Web.Controllers;
@@ -29,11 +30,6 @@ public class HomeController : Controller
     }
 
     public IActionResult adminDashboard()
-    {
-        return View();
-    }
-
-    public IActionResult Demo()
     {
         return View();
     }

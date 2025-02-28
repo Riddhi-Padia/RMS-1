@@ -117,6 +117,8 @@ public partial class Role
 
     public virtual ICollection<Unit> UnitModifiedByNavigations { get; set; } = new List<Unit>();
 
+    public virtual ICollection<User> Users { get; set;} = new List<User>();
+    
     public virtual ICollection<User> UserCreatedByNavigations { get; set; } = new List<User>();
 
     public virtual ICollection<User> UserModifiedByNavigations { get; set; } = new List<User>();
